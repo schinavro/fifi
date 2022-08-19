@@ -5,8 +5,8 @@ fifi cluster manual
 
 To do same execution throuout entire calculation nodes, do following.
 ```
-~# for i in {1..40}; do ssh node$(printf "%02d" $i) echo < hostname; done
-~# for i in {1..10}; do ssh c$(printf "%02d" $i) echo < hostname; done
+[root@headnode~]# for i in {1..40}; do ssh node$(printf "%02d" $i) echo < hostname; done
+[root@headnode~]# for i in {1..10}; do ssh c$(printf "%02d" $i) echo < hostname; done
 ```
 
 ## CPU 
@@ -19,10 +19,10 @@ To do same execution throuout entire calculation nodes, do following.
 To check the current cpu temperature (to check the the air cooling in the server room without going)
 
 ```
-~# yum install lm_sensors
-~# for i in {1..40}; do ssh node$(printf "%02d" $i) yum install -y lm_sensors
+[root@headnode~]# yum install lm_sensors
+[root@headnode~]# for i in {1..40}; do ssh node$(printf "%02d" $i) yum install -y lm_sensors
 ...
-~# sensors
+[root@headnode~]# sensors
 
 ```
 
@@ -30,7 +30,7 @@ To check the current cpu temperature (to check the the air cooling in the server
 
 ### Node drain / undrain
 ```
-~# scontrol update partitions=G1 state=Drain reason=Maintenance
+[root@headnode~]# scontrol update partitions=G1 state=Drain reason=Maintenance
 ```
 
 ###
