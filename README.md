@@ -33,4 +33,11 @@ To check the current cpu temperature (to check the the air cooling in the server
 [root@headnode~]# scontrol update partitions=G1 state=Drain reason=Maintenance
 ```
 
-###
+### Log
+```
+[root@headnode~]# cat /var/lib/slurm/slurmctld.log | grep error
+...
+[root@node01~]# cat /var/lib/slurm/slurmd.log | grep error
+```
+
+
