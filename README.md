@@ -81,6 +81,8 @@ or
 ```
 
 ### Create account 
+
+You need to 1. create the linux account 2. update NIS 3. update SLURM_DB 
 ```
 [root@headnode~]# adduser <USER ID>
 [root@headnode~]# passwd <USER ID>
@@ -92,7 +94,9 @@ or
 ...
 [USER_ID@headnode~]$ cd ~/.ssh
 [USER_ID@headnode~]$ cat id_rsa.put >> authorized_keys
+
 ```
+
 
 ### To reboot (2022/10/18)
 
@@ -136,5 +140,22 @@ To check the current cpu temperature (to check the the air cooling in the server
 ...
 [root@node01~]# cat /var/lib/slurm/slurmd.log | grep error
 ```
+
+### UPDATE SLURM_DB
+
+```
+CHECK USER LIST
+[root@headnode~]# sacctmgr list user -s 
+ADD
+[root@headnode~]# sacctmgr add user <USER_ID> account=phyiscslab
+```
+
+### modify the QOS
+Example
+```
+[root@headnode~]# sacctmgr list qos 
+[root@headnode~]# sacctmgr modify qos normal set maxtresperuser=cpu=120
+```
+
 
 
