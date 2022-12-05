@@ -3,7 +3,7 @@ fifi cluster manual
 
 ### To reboot (2022/10/18)
 
-Plug out the infiniband of `snoopy` headnode. Reboot the `node21~node40`. Replug the `snoopy` infinband after boot up of other nodes.
+Plug out the infiniband of `snoopy` headnode. Reboot the `node21~node40`. Replug the `snoopy` infinband cable.
 
 ### Multiple excutions
 
